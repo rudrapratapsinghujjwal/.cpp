@@ -1,24 +1,22 @@
-//Calculate Power of a Number
-
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-int main() 
+int power(int x, int y)
 {
-    int exponent;
-    float base, result = 1;
+   if (y == 0)
+   return 1;
+   else if (y%2 == 0)
+   return power(x, y/2)*power(x, y/2);
+   else
+   return x*power(x, y/2)*power(x, y/2);
+}
 
-    cout << "Enter base and exponent respectively:  ";
-    cin >> base >> exponent;
-
-    cout << base << "^" << exponent << " = ";
-
-    while (exponent != 0) {
-        result *= base;
-        --exponent;
-    }
-
-    cout << result;
-    
-    return 0;
+int main()
+{
+   int x = 3;
+   int y = 4;
+   cout<<"x = "<<x<<endl;;
+   cout<<"y = "<<y<<endl;
+   cout<<"x^y = "<<power(x,y);
+   return 0;
 }
