@@ -1,31 +1,40 @@
-///Check Palindrome Number
+#include <iostream>  
+using namespace std;  
 
+int main()  
+{  
+  
+     int num,rem,sum=0,temp;    
+  
+     cout<<"Please Enter Your  Number :";    
+     cin>>num;    
+     temp=num;    
 
-#include <iostream>
-using namespace std;
+     while(num>0)    
 
-int main()
-{
-     int n, num, digit, rev = 0;
+     {    
+     
+          rem=num%10;    
+          sum=(sum*10)+rem;    
+          num=num/10;    
 
-     cout << "Enter a positive number: ";
-     cin >> num;
+     }    
 
-     n = num;
+     if(temp==sum)
 
-     do
+     {    
+
+          cout<"Given Number is Palindrome number";    
+
+     }
+     else    
+
      {
-         digit = num % 10;
-         rev = (rev * 10) + digit;
-         num = num / 10;
-     } while (num != 0);
 
-     cout << " The reverse of the number is: " << rev << endl;
+          cout<"Given Number is not Palindrome number";   
 
-     if (n == rev)
-         cout << " The number is a palindrome.";
-     else
-         cout << " The number is not a palindrome.";
+     } 
+ 
+     return 0;  
 
-    return 0;
-}
+}  
